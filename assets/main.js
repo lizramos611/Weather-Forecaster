@@ -11,15 +11,17 @@ function searchWeather(){
     var cityName = document.getElementById ("cityName"); 
         cityName.innerHTML = getCityInput.value;
        
-fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + getCityInput.value '&units=imperial&appid=f5974a8f39defa4d231ee2456b263b09')
+fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + getCityInput.value + '&units=imperial&appid=f5974a8f39defa4d231ee2456b263b09')
 .then(response => response.json())
   .then(data => 
   {
     for (i=0; i >5; i++) {
 
- 
-  
- document.getElementById('temp').innerHTML = Temp:
+
+ document.getElementById('temp').innerHTML = "Temp:" + 
    }
   })
+  if (!response.ok) {
+    throw new Error
+  }
 };
