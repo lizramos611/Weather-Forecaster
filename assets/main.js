@@ -14,14 +14,16 @@ function searchWeather(){
 fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + getCityInput.value + '&units=imperial&appid=f5974a8f39defa4d231ee2456b263b09')
 .then(response => response.json())
   .then(data => 
-  {
-    for (i=0; i >5; i++) {
+{ return data.list.main.temp};
 
 
- document.getElementById('temp').innerHTML = "Temp:" + 
-   }
-  })
-  if (!response.ok) {
-    throw new Error
-  }
-};
+  displayWeather= function(data) {
+    let {temp, wind, humidity} = data.current;
+
+    var tempText = document.getElementById("temp");
+    var windText = document.getElementById("wind");
+    var humidityText = document.getElementById("humidity");
+    tempText.innerHTML = "Temp:" + data[0].temp;
+  
+    displayWeather();
+  })};
