@@ -16,6 +16,7 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + getCityInput.value
   .then(data => 
 
 {
+    
     var tempText = document.getElementsByClassName("list-group-item1");
     for (var i=0; i<tempText.length; i++) {
          tempText[i].innerHTML = "Temp: " + data.list[i].main.temp + "°";
@@ -32,9 +33,38 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + getCityInput.value
     }
 
     var iconText = document.getElementsByClassName("icon");
-    var iconNum = data.list[i].weather.icon;
+    var iconNum = data.list[i].weather[0].icon;
+    var iconUrl = 'http://openweathermap.org/img/wn/' + iconNum + '@2x.png';
     for (var i=0; i<iconText.length; i++) {
-fetch('http://openweathermap.org/img/wn/' + iconNum + '@2x.png');
+    iconText[i].setAttribute('src', iconUrl);
+}
+var currentTemp = document.getElementsByClassName("currenttemp");
+currentTemp.innerHTML = "Temp: " + data.list[i].main.temp + "°";
 
-    
-}})};
+
+
+var days = document.getElementsByClassName("card-title");
+var myDate = new Date();
+//console.log(myDate);
+month = myDate.getMonth() + 1;
+date = myDate.getUTCDate();
+day = myDate.getDay();
+year = myDate.getUTCFullYear();
+newDate = month + "/" + date + '/' + year;
+console.log(newDate);
+var dateDisplay =document.getElementsByClassName("date")[0];
+dateDisplay.innerHTML = newDate;
+console.log(dateDisplay);
+
+
+
+
+
+
+
+}
+
+
+
+
+)};
