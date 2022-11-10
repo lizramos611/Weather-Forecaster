@@ -6,14 +6,13 @@ grid-template-areas:
 "main aside"
 "footer footer";
 }
-body{
-   
-}
+
 
 .header {
     background-color:blue;
   grid-area: "header";
   border: 2px solid black;
+  position:relative;
 
 }
 #citysearch{
@@ -36,4 +35,5 @@ body{
 }
 .card1, .card2, .card3, .card4, .card5{
 border: 2px solid black;
+display: inline-block;
 }
