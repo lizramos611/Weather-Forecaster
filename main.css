@@ -1,39 +1,33 @@
 *{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-display: grid;
-grid-template-areas: 
-"header"
-"main aside"
-"footer footer";
 }
-
 
 .header {
     background-color:blue;
-  grid-area: "header";
+  display: flex;
+  width: 50%;
+  
   border: 2px solid black;
-  position:relative;
-
 }
 #citysearch{
-    grid-area: "main";
+    display: block;
     border: 2px solid black;
 
 }
 
 #weatherbox{
-    grid-area: "aside";
+   
     border: 2px solid black;
 
 }
 
 
 .forecastbox{
-    grid-area: "footer";
+    
     border: 2px solid black;
 
 }
 .card1, .card2, .card3, .card4, .card5{
 border: 2px solid black;
-display: inline-block;
+
 }

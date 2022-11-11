@@ -38,8 +38,6 @@ fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + getCityInput.value
     for (var i=0; i<iconText.length; i++) {
     iconText[i].setAttribute('src', iconUrl);
 }
-var currentTemp = document.getElementsByClassName("currenttemp");
-currentTemp.innerHTML = "Temp: " + data.list[i].main.temp + "°";
 
 
 
@@ -47,24 +45,24 @@ var days = document.getElementsByClassName("card-title");
 var myDate = new Date();
 //console.log(myDate);
 month = myDate.getMonth() + 1;
-date = myDate.getUTCDate();
-day = myDate.getDay();
+date = myDate.getDate();
 year = myDate.getUTCFullYear();
 newDate = month + "/" + date + '/' + year;
-console.log(newDate);
+//console.log(newDate);
 var dateDisplay =document.getElementsByClassName("date")[0];
 dateDisplay.innerHTML = newDate;
-console.log(dateDisplay);
+//console.log(dateDisplay);
+var days = myDate.getDay();
+var dayDisplay = document.getElementsByClassName("card-title");
+console.log(dayDisplay.length);
+for (var i= 0; i<dayDisplay.length - 1; i++) {
+   
+     var weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  dayDisplay[i].innerHTML = weekDays[days++];
+    }
+        
+   } )
 
-
-
-
-
-
-
-}
-
-
-
-
-)};
+};
+//console.log(dayDisplay[i]);
+//console.log(days);;
