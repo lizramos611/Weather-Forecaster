@@ -7,20 +7,24 @@
 
 function searchWeather(){
 
-   var getCityInput = document.getElementById("searchBox");
+   
+     var getCityInput = document.getElementById("searchBox");
     var cityName = document.getElementById ("cityName"); 
         cityName.innerHTML = getCityInput.value;
-    
+
 fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + getCityInput.value + '&units=imperial&appid=f5974a8f39defa4d231ee2456b263b09')
 .then(response => response.json())
   .then(data => 
 
 {
-    
+
     var tempText = document.getElementsByClassName("list-group-item1");
     for (var i=0; i<tempText.length; i++) {
+
+
          tempText[i].innerHTML = "Temp: " + data.list[i].main.temp + "°";
     }
+
 
     var windText = document.getElementsByClassName("list-group-item2");
     for (var i=0; i<windText.length; i++) {
@@ -55,14 +59,20 @@ dateDisplay.innerHTML = newDate;
 var days = myDate.getDay();
 var dayDisplay = document.getElementsByClassName("card-title");
 console.log(dayDisplay.length);
-for (var i= 0; i<dayDisplay.length - 1; i++) {
+for (var i= 0; i<dayDisplay.length; i++) {
    
-     var weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+     var weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   dayDisplay[i].innerHTML = weekDays[days++];
-    }
-        
-   } )
 
+    };
+       
+        }
+       
+  )
+  .catch(err => alert("Please enter a city!"))
+localStorage.clear();
+
+console.log(localStorage);
 };
 //console.log(dayDisplay[i]);
 //console.log(days);;
