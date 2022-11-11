@@ -2,13 +2,15 @@
     
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
+/*heading*/
 .header {
 background-color:darkblue;
   display: flex;
   color: whitesmoke;
   border: 2px solid black;
 }
+
+/*adding borders to display search box*/
 #citysearch{
     display: flex;
     border: 2px solid black;
@@ -17,9 +19,7 @@ background-color:darkblue;
 
 #weatherbox{
    
- 
     border: 2px solid black;
-   
     
 }
 
@@ -30,6 +30,7 @@ background-color:darkblue;
    
 
 }
+/* making cards line up with flexbox*/
 .card1, .card2, .card3, .card4, .card5{
 border: 2px solid black;
 background-color: grey;
@@ -37,8 +38,5 @@ display: flex;
 flex-basis: 0;
 width: 150px;
 height: 150px;
-
-
-
 
 }
