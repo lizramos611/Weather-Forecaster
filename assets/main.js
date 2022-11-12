@@ -90,5 +90,4 @@ historyBox[0].innerHTML += " " + searchHistory + ",";
 //local storage
 
 
- } 
-;
+ } ;
